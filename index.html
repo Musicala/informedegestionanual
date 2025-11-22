@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Casas Kiwa · Informe Anual 2025 – Musicala SAS</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Botonera superior (mantiene look & feel de tus informes) */
+    .botonera{
+      display:flex; flex-wrap:wrap; gap:.6rem; justify-content:center;
+      margin: 1.2rem auto; padding: .2rem;
+    }
+    .botonera button{
+      background:#0c57c3; color:#fff; border:0; padding:.6rem .9rem; border-radius:8px;
+      font-weight:600; cursor:pointer;
+    }
+    .botonera button.secondary{ background:#444; }
+    .botonera button.ghost{ background:#fff; color:#0c57c3; border:1px solid #0c57c3; }
+
+    /* Secciones con transición suave */
+    section{ display:none; opacity:0; transition:opacity .25s ease; }
+    section.mostrar{ opacity:1; }
+
+    /* Tablas (usa tu estilo base y suma mejoras mínimas) */
+    .tabla-seguimiento{
+      width:100%; border-collapse:collapse; margin: .8rem auto; background:#fff;
+      box-shadow:0 6px 12px rgba(0,0,0,.06); border-radius:12px; overflow:hidden;
+    }
+    .tabla-seguimiento th, .tabla-seguimiento td{ padding:.9rem .8rem; vertical-align:top; }
+    .tabla-seguimiento thead th{ background:#f6f7fb; font-weight:700; border-bottom:1px solid #eee; }
+    .tabla-seguimiento tbody tr{ border-bottom:1px solid #f0f0f0; }
+    .evidencias-cell .btn-group{ display:flex; flex-wrap:wrap; gap:.4rem; }
+    .btn-evidencias{ background:#fff; border:1px solid #e5e7eb; padding:.45rem .65rem; border-radius:8px; text-decoration:none; color:#0c57c3; font-weight:600; }
+    .btn-evidencias:hover{ background:#f5f7ff; }
+
+    /* Encabezado */
+    .header-informe{
+      display:flex; gap:1rem; align-items:center; justify-content:center; flex-wrap:wrap;
+      margin:1rem auto .3rem;
+    }
+    .header-informe img{ max-height:90px; width:auto; }
+    .titulo-institucional{ text-align:center }
+    .titulo-institucional h3{ margin:.2rem 0 0; }
+    .titulo-informe{ text-align:center; margin:.4rem auto 1rem; }
+
+    /* Galería */
+    .gallery-grid{ margin-top:.6rem; }
+
+    /* Print */
+    @media print{
+      .botonera{ display:none; }
+      section{ display:block !important; opacity:1 !important; }
+      a[href]:after{ content:""; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ========================== BARRA DE ACCIÓN ========================== -->
+  <div class="botonera">
+    <button onclick="mostrarSeccion('anual')">🗓️ Ver Informe Anual 2025</button>
+    <button class="secondary" onclick="mostrarSeccion('informe')">📄 Ver Informe Mensual</button>
+    <button class="ghost" onclick="mostrarSeccion('tablero')">📊 Ver Tablero de Control</button>
+    <button class="ghost" onclick="window.print()">🖨️ Descargar / Imprimir PDF</button>
+  </div>
+
+  <!-- ========================== INFORME ANUAL CONSOLIDADO ========================== -->
+  <section id="anual-2025" class="informe mostrar">
+    <div class="header-informe">
+      <!-- Encabezado institucional -->
+      <img src="Encabezado FSA.PNG" alt="Fundación San Antonio">
+      <div class="titulo-institucional">
+        <h3>Fundación San Antonio – Gestión Social</h3>
+        <p>Programa Casas Kiwa · Operador: <strong>Musicala SAS</strong></p>
+      </div>
+    </div>
+
+    <h2 class="titulo-informe">Informe Anual Consolidado 2025 – Programa Casas Kiwa</h2>
+
+    <!-- Hero / Intro -->
+    <div class="card hero-anual">
+      <p class="lead">
+        El presente informe anual consolida los resultados del Programa Casas Kiwa durante el periodo
+        <strong>marzo – noviembre de 2025</strong>, a partir de las fuentes oficiales definidas para la alianza:
+        <strong>informes mensuales F-GS-37</strong>, tableros de <strong>Looker Studio</strong>, registros operativos
+        en hojas de cálculo y herramientas digitales internas de <strong>Musicala SAS</strong>.
+        <br><br>
+        El documento integra, en un solo insumo, los principales <strong>indicadores cuantitativos</strong>,
+        el análisis <strong>cualitativo pedagógico y de convivencia</strong>, una <strong>matriz de riesgos
+        y mejoras proyectadas para 2026</strong>, así como referencias directas a las <strong>evidencias auditables</strong>
+        (tableros, carpetas de Drive y aplicativos de seguimiento).
+      </p>
+
+      <p class="lead">
+        Su propósito es ofrecer a la Fundación San Antonio una <strong>visión sintética pero completa</strong> de la
+        ejecución del Programa Casas Kiwa, permitiendo tomar decisiones informadas para la continuidad,
+        ajustes metodológicos y sostenibilidad del proceso en los años siguientes.
+      </p>
+
+      <!-- Tripleta de impacto (chips) -->
+      <div class="impacto-tripleta">
+        <span class="chip">✅ 98% de ejecución programática</span>
+        <span class="chip">🎨 Calidad pedagógica y vínculos fortalecidos</span>
+        <span class="chip badge-amarillo">⚠️ Asistencia variable en meses críticos</span>
+      </div>
+
+      <!-- Tabla de contenido interna -->
+      <nav class="toc">
+        <a href="#kpi">Resumen ejecutivo</a>
+        <a href="#indicadores">Indicadores anuales</a>
+        <a href="#cualitativa">Evaluación cualitativa</a>
+        <a href="#riesgos">Riesgos y mejoras 2026</a>
+        <a href="#galeria">Evidencias gráficas</a>
+        <a href="#metodologia">Metodología y fuentes</a>
+      </nav>
+    </div>
+
+    <!-- KPI GRID -->
+    <div id="kpi" class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-label">Cobertura efectiva (participaciones)</div>
+        <div class="kpi-value">≈ 4.071</div>
+        <div class="kpi-sub">
+          Promedio mensual ≈ 509 participaciones (mar–oct). Noviembre: dato por completar.
+        </div>
+        <div class="bar"><span style="width:66%"></span></div>
+        <p class="nota-indicador">
+          La cobertura refleja el número total de <strong>asistencias registradas</strong> de niñas, niños y adolescentes
+          a las sesiones artísticas. Este volumen de participación evidencia un uso sostenido del programa como espacio
+          de acompañamiento, exploración creativa y refuerzo de habilidades socioemocionales.
+        </p>
+      </div>
+
+      <div class="kpi-card">
+        <div class="kpi-label">Ejecución de sesiones programadas</div>
+        <div class="kpi-value">98,4%</div>
+        <div class="kpi-sub">
+          3.566 sesiones realizadas (mar–oct). Noviembre: dato por completar.
+        </div>
+        <div class="bar"><span style="width:98%"></span></div>
+        <p class="nota-indicador">
+          El porcentaje de ejecución evidencia una <strong>alta estabilidad operativa</strong> del programa, con
+          cumplimiento consistente de las jornadas planeadas. Las variaciones se relacionan con factores puntuales
+          (eventos externos, cierres de sedes o ajustes institucionales), debidamente soportados en los registros.
+        </p>
+      </div>
+
+      <div class="kpi-card">
+        <div class="kpi-label">Asistencia promedio</div>
+        <div class="kpi-value">≈ 66–67%</div>
+        <div class="kpi-sub">
+          Promedio mar–oct, con variabilidad estacional notoria en sep–oct.
+        </div>
+        <div class="bar"><span style="width:67%"></span></div>
+        <p class="nota-indicador">
+          La asistencia promedio se mantiene en un rango medio-alto, con <strong>picos y descensos</strong> asociados
+          a periodos de vacaciones, cambios de dinámica familiar y coyunturas propias de cada territorio.
+          Esto plantea el reto de <strong>profundizar en estrategias de retención y continuidad</strong>, sin perder
+          la flexibilidad requerida por las realidades locales.
+        </p>
+      </div>
+
+      <div class="kpi-card">
+        <div class="kpi-label">Progreso / Retención pedagógica</div>
+        <div class="kpi-value">≈ 87,6%</div>
+        <div class="kpi-sub">
+          Indicador tomado de los cortes jun–oct; mar–may con ≈ 39,4% por ser definición inicial de grupos.
+        </div>
+        <div class="bar"><span style="width:88%"></span></div>
+        <p class="nota-indicador">
+          El indicador de progreso/retención muestra que, una vez estabilizados los grupos, la <strong>gran mayoría
+          de participantes permanece y avanza</strong> en sus procesos, consolidando aprendizajes tanto artísticos
+          como socioemocionales. El valor de mar–may corresponde a la fase de ajuste y definición de cupos.
+        </p>
+      </div>
+    </div>
+
+    <!-- INDICADORES ANUALES -->
+    <div id="indicadores" class="card">
+      <h3>1) Indicadores Cuantitativos Anuales (F-GS-37)</h3>
+      <p>
+        A continuación, se presentan los indicadores clave definidos en el formato <strong>F-GS-37</strong>, con su
+        respectiva definición, resultado acumulado para 2025 y las rutas de acceso a las <strong>evidencias digitales</strong>.
+        Todos los enlaces se encuentran parametrizados para facilitar auditorías y seguimientos externos.
+      </p>
+
+      <table class="tabla-seguimiento">
+        <thead>
+          <tr>
+            <th>Indicador</th>
+            <th>Definición</th>
+            <th>Resultado acumulado 2025</th>
+            <th>Evidencias asociadas</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Cobertura (participaciones)</strong></td>
+            <td>
+              Total de asistencias registradas en las sesiones de formación artística de Casas Kiwa,
+              considerando la participación efectiva de NNA en todas las sedes vinculadas.
+            </td>
+            <td>
+              <strong>≈ 4.071</strong> participaciones acumuladas (mar–oct).
+              <br>Mes de noviembre: <em>dato por completar al cierre oficial del periodo</em>.
+            </td>
+            <td class="evidencias-cell">
+              <div class="btn-group">
+                <a class="btn-evidencias" target="_blank" href="https://lookerstudio.google.com/reporting/46386242-adff-436e-81b3-b30b638f6d63/page/p_ms2ajwssqd">📊 Tablero anual</a>
+                <a class="btn-evidencias" target="_blank" href="https://docs.google.com/spreadsheets/d/1BluCFA9qP4RjJI5Jy9glsp_vzCL0paZrt90-U3cuDyc/edit?usp=sharing">✅ Seguimiento sesiones</a>
+                <a class="btn-evidencias" target="_blank" href="https://musicalaescuela.github.io/Manager">📱 Manager</a>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Ejecución programática</strong></td>
+            <td>
+              Porcentaje de sesiones planificadas que efectivamente se realizaron, de acuerdo con la malla
+              de programación acordada con la Fundación San Antonio y las variaciones autorizadas.
+            </td>
+            <td>
+              <strong>98,4%</strong> de ejecución (mar–oct), lo que indica una <strong>muy alta estabilidad operativa</strong>.
+              <br>Mes de noviembre: <em>dato por completar con el cierre de registro</em>.
+            </td>
+            <td class="evidencias-cell">
+              <div class="btn-group">
+                <a class="btn-evidencias" target="_blank" href="https://docs.google.com/spreadsheets/d/1BluCFA9qP4RjJI5Jy9glsp_vzCL0paZrt90-U3cuDyc/edit?usp=sharing">✅ Hoja de control</a>
+                <a class="btn-evidencias" target="_blank" href="https://lookerstudio.google.com/reporting/46386242-adff-436e-81b3-b30b638f6d63/page/p_ms2ajwssqd">📊 Tablero</a>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Asistencia promedio</strong></td>
+            <td>
+              Porcentaje promedio de asistencia de niñas, niños y adolescentes a las clases artísticas ofertadas.
+              Tiene en cuenta las variaciones por periodo, sedes y factores de contexto reportados.
+            </td>
+            <td>
+              <strong>≈ 66–67%</strong> asistencia promedio (mar–oct).
+              <br>Mes de noviembre: <em>pendiente consolidación final</em>.
+            </td>
+            <td class="evidencias-cell">
+              <div class="btn-group">
+                <a class="btn-evidencias" target="_blank" href="https://docs.google.com/spreadsheets/d/1pr7df0SooG_nfMwO-6mDZoVA-hc4IehxDF0DwBEgqe0/edit?usp=sharing">🗂️ Asistencia</a>
+                <a class="btn-evidencias" target="_blank" href="https://lookerstudio.google.com/reporting/46386242-adff-436e-81b3-b30b638f6d63/page/p_ms2ajwssqd">📊 Tablero</a>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Progreso / Retención</strong></td>
+            <td>
+              Porcentaje de estudiantes con avances significativos según los criterios pedagógicos definidos
+              (por ejemplo, niveles de logro tipo Q2 en adelante), así como su permanencia dentro del proceso.
+            </td>
+            <td>
+              <strong>≈ 87,6%</strong> para el periodo <strong>jun–oct</strong>, una vez estabilizados los grupos.
+              <br>Para <strong>mar–may</strong>, el indicador se sitúa en <strong>≈ 39,4%</strong>, valor consistente con la
+              fase de diagnóstico, rotación inicial y definición de cupos por sede.
+            </td>
+            <td class="evidencias-cell">
+              <div class="btn-group">
+                <a class="btn-evidencias" target="_blank" href="https://musicala.github.io/proyectosfsa/">🎯 Proyectos</a>
+                <a class="btn-evidencias" target="_blank" href="https://musicala.github.io/diagnosticos/">🧪 Diagnósticos</a>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="nota-indicador">
+        Nota: los enlaces a documentos y tableros de Drive deben estar configurados en modo
+        <strong>“Cualquiera con el enlace – Lector”</strong> para garantizar la trazabilidad y facilitar
+        procesos de auditoría externa o verificación posterior.
+      </p>
+    </div>
+
+    <!-- EVALUACIÓN CUALITATIVA GLOBAL -->
+    <div id="cualitativa" class="card">
+      <h3>2) Evaluación Cualitativa Global del Proceso 2025</h3>
+      <p>
+        Además de los indicadores numéricos, el Programa Casas Kiwa se caracteriza por una dimensión
+        <strong>cualitativa</strong> que da cuenta de la experiencia de niñas, niños, adolescentes, familias
+        y equipos docentes. A continuación, se sintetizan las principales tendencias de
+        <strong>retroalimentación cálida</strong>, <strong>retroalimentación fría</strong> y
+        <strong>recomendaciones clave</strong> para el año 2026.
+      </p>
+
+      <div class="tabla-evaluacion">
+        <div class="fila">
+          <div class="etiqueta">Retroalimentación cálida</div>
+          <div class="contenido">
+            <ul>
+              <li>
+                Consolidación de una <strong>metodología interdisciplinar</strong> que articula dibujo,
+                danza, teatro y música, con énfasis en el proceso pedagógico tanto como en las muestras
+                finales. Esto ha permitido que los grupos reconozcan el arte como un <strong>lenguaje
+                integral</strong> más que como actividades aisladas.
+              </li>
+              <li>
+                Fortalecimiento de los <strong>vínculos NNA–docentes–familias</strong>, evidenciado en
+                la permanencia en los talleres, la participación en muestras como <em>AlegreMente</em> y
+                las manifestaciones de gratitud y apropiación del programa por parte de las comunidades.
+              </li>
+              <li>
+                Uso extendido y cada vez más natural de <strong>herramientas digitales</strong> (Manager,
+                tableros, portafolio de evidencias) que han facilitado el seguimiento de grupos, el
+                registro de información y la <strong>transparencia en los reportes</strong>.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="fila">
+          <div class="etiqueta">Retroalimentación fría</div>
+          <div class="contenido">
+            <ul>
+              <li>
+                Variabilidad de la <strong>asistencia</strong> en algunos meses (particularmente
+                septiembre y octubre), asociada a factores de contexto escolar y familiar, que impacta
+                la continuidad de ciertos procesos y la consolidación de obras colectivas.
+              </li>
+              <li>
+                Presencia de <strong>situaciones de convivencia puntuales</strong> que requieren
+                profundizar en protocolos preventivos, acuerdos de aula y acompañamiento diferenciado
+                para casos sensibles, articulando la ruta de atención de la Fundación.
+              </li>
+              <li>
+                Limitaciones de <strong>infraestructura y materiales</strong> en determinadas sedes
+                (espacios reducidos, ruido externo, disponibilidad de equipos), que obligan a ajustes
+                continuos por parte del equipo docente para garantizar la experiencia artística.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="fila">
+          <div class="etiqueta">Recomendaciones 2026</div>
+          <div class="contenido">
+            <ul>
+              <li>
+                Implementar un <strong>plan de estabilización de asistencia</strong> que combine
+                recordatorios sistemáticos, acuerdos con sedes, campañas motivacionales y un
+                <strong>calendario unificado de muestras</strong> que permita a las familias proyectar su participación.
+              </li>
+              <li>
+                Diseñar una <strong>matriz de aula</strong> con estrategias específicas de convivencia
+                por grupo, incluyendo herramientas de regulación emocional, acuerdos visuales y un
+                “<strong>kit de clase</strong>” para las sedes que presentan mayor complejidad.
+              </li>
+              <li>
+                Profundizar en la <strong>sistematización</strong> mediante un checklist mensual de
+                evidencias (fotos, registros, videos), articulado a un botón tipo
+                “<strong>Auditar</strong>” que facilite la consulta ordenada de Drive público y hojas
+                de control.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="fila">
+          <div class="etiqueta">Comentarios finales</div>
+          <div class="contenido">
+            El año 2025 cierra con un proceso <strong>sólido en calidad pedagógica y ejecución
+            programática</strong>, en el que se evidencian avances significativos en la apropiación del
+            arte como herramienta de protección, cuidado y construcción de proyecto de vida para NNA.
+            <br><br>
+            El principal reto para 2026 consiste en <strong>incrementar la cobertura efectiva y
+            estabilizar la asistencia</strong>, especialmente en los meses críticos, manteniendo el
+            <strong>sello humano, artístico y relacional</strong> que ha caracterizado la alianza
+            entre la Fundación San Antonio y Musicala SAS.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MATRIZ DE RIESGOS -->
+    <div id="riesgos" class="card">
+      <h3>3) Matriz de Riesgos y Mejoras Proyectadas 2026</h3>
+      <p>
+        A partir del comportamiento del programa durante 2025, se identifican los siguientes
+        <strong>riesgos operativos y pedagógicos</strong>, junto con sus evidencias y las principales
+        acciones de mitigación propuestas para el periodo 2026.
+      </p>
+
+      <table class="tabla-seguimiento">
+        <thead>
+          <tr>
+            <th>Riesgo</th>
+            <th>Evidencia / Soporte</th>
+            <th>Acciones de mitigación 2026</th>
+            <th>Responsable</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Asistencia irregular en algunos meses</td>
+            <td>
+              Análisis de tableros de asistencia (especialmente sep–oct) y reportes mensuales F-GS-37
+              donde se consignan causas de inasistencia y ausencias prolongadas.
+            </td>
+            <td>
+              • Implementar un <strong>calendario unificado</strong> de actividades y muestras.<br>
+              • Fortalecer los <strong>canales de comunicación</strong> con familias y líderes de sede.<br>
+              • Realizar campañas puntuales de <strong>reenganche</strong> en periodos críticos.
+            </td>
+            <td>Coordinación general y líderes de sede</td>
+          </tr>
+          <tr>
+            <td>Registros incompletos o tardíos</td>
+            <td>
+              Revisión de formularios, hojas de asistencia y cortes mensuales donde se evidencia
+              rezago puntual en el diligenciamiento de algunos grupos.
+            </td>
+            <td>
+              • Establecer un <strong>checklist de cierre de mes</strong> con tiempos definidos.<br>
+              • Activar una <strong>auditoría interna mensual</strong> (Drive público + Manager).<br>
+              • Brindar <strong>acompañamiento técnico</strong> a los docentes en el uso de las herramientas digitales.
+            </td>
+            <td>Docentes de arte / Soporte y sistemas</td>
+          </tr>
+          <tr>
+            <td>Condiciones de aula y materiales</td>
+            <td>
+              Reportes de sedes, actas de reunión y comunicaciones donde se documentan limitaciones
+              de espacio, ruido o insuficiencia de insumos para ciertas actividades.
+            </td>
+            <td>
+              • Implementar un <strong>kit móvil de materiales</strong> priorizado para las sedes con mayor necesidad.<br>
+              • Coordinar con la Fundación posibles <strong>ajustes de espacio</strong> para actividades específicas.<br>
+              • Ajustar las planeaciones a las <strong>condiciones reales del entorno</strong> cuando sea necesario.
+            </td>
+            <td>Coordinación logística y equipo docente</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- GALERÍA -->
+    <div id="galeria" class="card">
+      <h3>4) Evidencias gráficas y portafolio visual</h3>
+      <p>
+        La dimensión visual del programa permite observar el ambiente de las clases, la participación
+        de los grupos y el tipo de productos artísticos que se han construido durante el año.
+        A través de la siguiente carpeta pública se centralizan fotografías y material gráfico
+        que complementan la lectura del informe.
+      </p>
+
+      <div class="gallery-grid">
+        <a class="gallery-card" target="_blank" href="https://drive.google.com/drive/folders/1AC-BjyYXiEcB7_l5KynvKMdqSXEjxPyh?usp=sharing">
+          <img src="galeria.jpg" alt="Galería Casas Kiwa">
+          <span>Abrir carpeta pública de evidencias</span>
+        </a>
+        <!-- Aquí se pueden añadir miniaturas públicas específicas por sedes o eventos -->
+      </div>
+      <p class="nota-evidencia">
+        ⚠️ En caso de que el sistema solicite inicio de sesión, es importante verificar que la carpeta
+        esté configurada como <strong>“Cualquiera con el enlace – Lector”</strong>, respetando siempre
+        las políticas de uso de imagen y protección de datos personales de NNA.
+      </p>
+    </div>
+
+    <!-- METODOLOGÍA -->
+    <div id="metodologia" class="card">
+      <h3>5) Notas metodológicas y fuentes de información</h3>
+      <p>
+        Este consolidado anual se elabora a partir de los informes mensuales correspondientes al periodo
+        <strong>marzo – octubre 2025</strong>, así como de los tableros en <strong>Looker Studio</strong>
+        y aplicativos internos de Musicala SAS. El mes de <strong>noviembre</strong> se integra una vez
+        finalizado el proceso de validación y cierre de datos.
+      </p>
+      <p>
+        A continuación, se referencian los informes de gestión mensuales publicados en entorno web,
+        los cuales pueden consultarse como soporte detallado de cada corte:
+      </p>
+      <div class="btn-group" style="margin-top:.5rem">
+        <a class="btn-evidencias" href="https://musicala.github.io/informedegestionmarzo/" target="_blank">Marzo</a>
+        <a class="btn-evidencias" href="https://musicala.github.io/informedegestionabril/" target="_blank">Abril</a>
+        <a class="btn-evidencias" href="https://musicala.github.io/informedegestionmayo/" target="_blank">Mayo</a>
+        <a class="btn-evidencias" href="https://musicala.github.io/informedegestionjunio/" target="_blank">Junio</a>
+        <a class="btn-evidencias" href="https://musicala.github.io/informedegestionjulio/" target="_blank">Julio</a>
+        <a class="btn-evidencias" href="https://musicala.github.io/informedegestionseptiembre/" target="_blank">Septiembre</a>
+        <a class="btn-evidencias" href="https://musicala.github.io/informedegestionoctubre/" target="_blank">Octubre</a>
+        <!-- Noviembre se agrega cuando esté publicado -->
+      </div>
+      <p class="nota-indicador" style="margin-top:1rem;">
+        La coherencia entre estos informes mensuales, el tablero de control y el presente consolidado
+        anual garantiza una <strong>línea de trazabilidad completa</strong> del Programa Casas Kiwa
+        durante 2025.
+      </p>
+    </div>
+  </section>
+  <!-- ====================== / INFORME ANUAL ====================== -->
+
+
+  <!-- ====================== INFORME MENSUAL (vista resumen) ====================== -->
+  <section id="informe">
+    <div class="card">
+      <h3>Informe técnico mensual (formato F-GS-37)</h3>
+      <p>
+        Esta vista está pensada como acceso rápido al <strong>informe mensual vigente</strong> en
+        formato F-GS-37, manteniendo la estructura y contenidos que se presentan habitualmente a la
+        Fundación San Antonio. Desde aquí se puede revisar el detalle del mes, complementar el análisis
+        anual y descargar el documento para archivo.
+      </p>
+      <p>
+        Para el presente corte, el informe correspondiente es el de <strong>noviembre 2025</strong>,
+        accesible en el siguiente enlace:
+      </p>
+      <div class="btn-group">
+        <a class="btn-evidencias" href="https://musicala.github.io/informedegestionnoviembre/" target="_blank">Abrir informe de noviembre</a>
+        <a class="btn-evidencias" href="#" onclick="window.print()">🖨️ Descargar / Imprimir PDF</a>
+      </div>
+    </div>
+  </section>
+  <!-- ====================== / INFORME MENSUAL ====================== -->
+
+
+  <!-- ====================== TABLERO (iframe o enlace) ====================== -->
+  <section id="tablero">
+    <div class="card">
+      <h3>Tablero de Control – Looker Studio</h3>
+      <p>
+        El tablero de control permite visualizar en tiempo real los principales indicadores del
+        Programa Casas Kiwa (cobertura, asistencia, ejecución, entre otros), con filtros por sede,
+        mes y tipo de actividad. Se recomienda abrirlo en una pestaña independiente para explorar
+        todos los filtros disponibles.
+      </p>
+      <div class="btn-group" style="margin:.6rem 0 1rem">
+        <a class="btn-evidencias" target="_blank" href="https://lookerstudio.google.com/reporting/46386242-adff-436e-81b3-b30b638f6d63/page/p_ms2ajwssqd">Abrir tablero</a>
+      </div>
+      <div style="position:relative;padding-top:56.25%;background:#f6f7fb;border:1px solid #eee;border-radius:12px;overflow:hidden">
+        <iframe
+          src="https://lookerstudio.google.com/embed/reporting/46386242-adff-436e-81b3-b30b638f6d63/page/p_ms2ajwssqd"
+          style="position:absolute;inset:0;border:0;width:100%;height:100%"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </section>
+  <!-- ====================== / TABLERO ====================== -->
+
+
+  <script>
+    // Mostrar una sola vista a la vez
+    function mostrarSeccion(seccion) {
+      const anual   = document.getElementById('anual-2025');
+      const informe = document.getElementById('informe');
+      const tablero = document.getElementById('tablero');
+      [anual, informe, tablero].forEach(el=>{
+        if(!el) return;
+        el.classList.remove('mostrar');
+        el.style.display='none';
+      });
+      if(seccion==='anual' && anual){
+        anual.style.display='block';
+        requestAnimationFrame(()=>anual.classList.add('mostrar'));
+      }
+      if(seccion==='informe' && informe){
+        informe.style.display='block';
+        requestAnimationFrame(()=>informe.classList.add('mostrar'));
+      }
+      if(seccion==='tablero' && tablero){
+        tablero.style.display='block';
+        requestAnimationFrame(()=>tablero.classList.add('mostrar'));
+      }
+    }
+    // Por defecto, abre el Anual
+    document.addEventListener('DOMContentLoaded', ()=> mostrarSeccion('anual'));
+  </script>
+</body>
+</html>
