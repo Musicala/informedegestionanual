@@ -5,62 +5,12 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Casas Kiwa · Informe Anual 2025 – Musicala SAS</title>
   <link rel="stylesheet" href="styles.css" />
-  <style>
-    /* Botonera superior (mantiene look & feel de tus informes) */
-    .botonera{
-      display:flex; flex-wrap:wrap; gap:.6rem; justify-content:center;
-      margin: 1.2rem auto; padding: .2rem;
-    }
-    .botonera button{
-      background:#0c57c3; color:#fff; border:0; padding:.6rem .9rem; border-radius:8px;
-      font-weight:600; cursor:pointer;
-    }
-    .botonera button.secondary{ background:#444; }
-    .botonera button.ghost{ background:#fff; color:#0c57c3; border:1px solid #0c57c3; }
-
-    /* Secciones con transición suave */
-    section{ display:none; opacity:0; transition:opacity .25s ease; }
-    section.mostrar{ opacity:1; }
-
-    /* Tablas (usa tu estilo base y suma mejoras mínimas) */
-    .tabla-seguimiento{
-      width:100%; border-collapse:collapse; margin: .8rem auto; background:#fff;
-      box-shadow:0 6px 12px rgba(0,0,0,.06); border-radius:12px; overflow:hidden;
-    }
-    .tabla-seguimiento th, .tabla-seguimiento td{ padding:.9rem .8rem; vertical-align:top; }
-    .tabla-seguimiento thead th{ background:#f6f7fb; font-weight:700; border-bottom:1px solid #eee; }
-    .tabla-seguimiento tbody tr{ border-bottom:1px solid #f0f0f0; }
-    .evidencias-cell .btn-group{ display:flex; flex-wrap:wrap; gap:.4rem; }
-    .btn-evidencias{ background:#fff; border:1px solid #e5e7eb; padding:.45rem .65rem; border-radius:8px; text-decoration:none; color:#0c57c3; font-weight:600; }
-    .btn-evidencias:hover{ background:#f5f7ff; }
-
-    /* Encabezado */
-    .header-informe{
-      display:flex; gap:1rem; align-items:center; justify-content:center; flex-wrap:wrap;
-      margin:1rem auto .3rem;
-    }
-    .header-informe img{ max-height:90px; width:auto; }
-    .titulo-institucional{ text-align:center }
-    .titulo-institucional h3{ margin:.2rem 0 0; }
-    .titulo-informe{ text-align:center; margin:.4rem auto 1rem; }
-
-    /* Galería */
-    .gallery-grid{ margin-top:.6rem; }
-
-    /* Print */
-    @media print{
-      .botonera{ display:none; }
-      section{ display:block !important; opacity:1 !important; }
-      a[href]:after{ content:""; }
-    }
-  </style>
 </head>
 
 <body>
   <!-- ========================== BARRA DE ACCIÓN ========================== -->
   <div class="botonera">
     <button onclick="mostrarSeccion('anual')">🗓️ Ver Informe Anual 2025</button>
-    <button class="secondary" onclick="mostrarSeccion('informe')">📄 Ver Informe Mensual</button>
     <button class="ghost" onclick="mostrarSeccion('tablero')">📊 Ver Tablero de Control</button>
     <button class="ghost" onclick="window.print()">🖨️ Descargar / Imprimir PDF</button>
   </div>
@@ -110,6 +60,7 @@
         <a href="#kpi">Resumen ejecutivo</a>
         <a href="#indicadores">Indicadores anuales</a>
         <a href="#cualitativa">Evaluación cualitativa</a>
+        <a href="#sintesis">Síntesis actas docentes</a>
         <a href="#riesgos">Riesgos y mejoras 2026</a>
         <a href="#galeria">Evidencias gráficas</a>
         <a href="#metodologia">Metodología y fuentes</a>
@@ -120,9 +71,9 @@
     <div id="kpi" class="kpi-grid">
       <div class="kpi-card">
         <div class="kpi-label">Cobertura efectiva (participaciones)</div>
-        <div class="kpi-value">≈ 4.071</div>
+        <div class="kpi-value">≈ 4.455</div>
         <div class="kpi-sub">
-          Promedio mensual ≈ 509 participaciones (mar–oct). Noviembre: dato por completar.
+          Promedio mensual ≈ 495 participaciones (mar–nov).
         </div>
         <div class="bar"><span style="width:66%"></span></div>
         <p class="nota-indicador">
@@ -136,7 +87,7 @@
         <div class="kpi-label">Ejecución de sesiones programadas</div>
         <div class="kpi-value">98,4%</div>
         <div class="kpi-sub">
-          3.566 sesiones realizadas (mar–oct). Noviembre: dato por completar.
+          4.008 sesiones realizadas (mar–nov).
         </div>
         <div class="bar"><span style="width:98%"></span></div>
         <p class="nota-indicador">
@@ -148,11 +99,11 @@
 
       <div class="kpi-card">
         <div class="kpi-label">Asistencia promedio</div>
-        <div class="kpi-value">≈ 66–67%</div>
+        <div class="kpi-value">≈ 64–65%</div>
         <div class="kpi-sub">
-          Promedio mar–oct, con variabilidad estacional notoria en sep–oct.
+          Promedio mar–nov, con variabilidad estacional notoria en jul–nov.
         </div>
-        <div class="bar"><span style="width:67%"></span></div>
+        <div class="bar"><span style="width:65%"></span></div>
         <p class="nota-indicador">
           La asistencia promedio se mantiene en un rango medio-alto, con <strong>picos y descensos</strong> asociados
           a periodos de vacaciones, cambios de dinámica familiar y coyunturas propias de cada territorio.
@@ -163,9 +114,9 @@
 
       <div class="kpi-card">
         <div class="kpi-label">Progreso / Retención pedagógica</div>
-        <div class="kpi-value">≈ 87,6%</div>
+        <div class="kpi-value">≈ 88%</div>
         <div class="kpi-sub">
-          Indicador tomado de los cortes jun–oct; mar–may con ≈ 39,4% por ser definición inicial de grupos.
+          Indicador tomado de los cortes jun–nov; mar–may con ≈ 39,4% por ser definición inicial de grupos.
         </div>
         <div class="bar"><span style="width:88%"></span></div>
         <p class="nota-indicador">
@@ -202,8 +153,7 @@
               considerando la participación efectiva de NNA en todas las sedes vinculadas.
             </td>
             <td>
-              <strong>≈ 4.071</strong> participaciones acumuladas (mar–oct).
-              <br>Mes de noviembre: <em>dato por completar al cierre oficial del periodo</em>.
+              <strong>≈ 4.455</strong> participaciones acumuladas (mar–nov).
             </td>
             <td class="evidencias-cell">
               <div class="btn-group">
@@ -220,8 +170,7 @@
               de programación acordada con la Fundación San Antonio y las variaciones autorizadas.
             </td>
             <td>
-              <strong>98,4%</strong> de ejecución (mar–oct), lo que indica una <strong>muy alta estabilidad operativa</strong>.
-              <br>Mes de noviembre: <em>dato por completar con el cierre de registro</em>.
+              <strong>98,4%</strong> de ejecución (mar–nov), lo que indica una <strong>muy alta estabilidad operativa</strong>.
             </td>
             <td class="evidencias-cell">
               <div class="btn-group">
@@ -237,8 +186,7 @@
               Tiene en cuenta las variaciones por periodo, sedes y factores de contexto reportados.
             </td>
             <td>
-              <strong>≈ 66–67%</strong> asistencia promedio (mar–oct).
-              <br>Mes de noviembre: <em>pendiente consolidación final</em>.
+              <strong>≈ 64–65%</strong> asistencia promedio (mar–nov).
             </td>
             <td class="evidencias-cell">
               <div class="btn-group">
@@ -254,7 +202,7 @@
               (por ejemplo, niveles de logro tipo Q2 en adelante), así como su permanencia dentro del proceso.
             </td>
             <td>
-              <strong>≈ 87,6%</strong> para el periodo <strong>jun–oct</strong>, una vez estabilizados los grupos.
+              <strong>≈ 88%</strong> para el periodo <strong>jun–nov</strong>, una vez estabilizados los grupos.
               <br>Para <strong>mar–may</strong>, el indicador se sitúa en <strong>≈ 39,4%</strong>, valor consistente con la
               fase de diagnóstico, rotación inicial y definición de cupos por sede.
             </td>
@@ -274,100 +222,262 @@
       </p>
     </div>
 
-    <!-- EVALUACIÓN CUALITATIVA GLOBAL -->
+    <!-- EVALUACIÓN CUALITATIVA GLOBAL (ACTUALIZADA) -->
     <div id="cualitativa" class="card">
       <h3>2) Evaluación Cualitativa Global del Proceso 2025</h3>
       <p>
-        Además de los indicadores numéricos, el Programa Casas Kiwa se caracteriza por una dimensión
-        <strong>cualitativa</strong> que da cuenta de la experiencia de niñas, niños, adolescentes, familias
-        y equipos docentes. A continuación, se sintetizan las principales tendencias de
+        Además de los indicadores numéricos, el Programa Casas Kiwa cuenta con una dimensión
+        <strong>cualitativa</strong> que recoge la experiencia pedagógica, operativa y relacional entre NNA,
+        docentes, familias y líderes de sede. A continuación se integran las tendencias de
         <strong>retroalimentación cálida</strong>, <strong>retroalimentación fría</strong> y
-        <strong>recomendaciones clave</strong> para el año 2026.
+        <strong>mejoras proyectadas para 2026</strong>, incluyendo los nuevos aspectos identificados durante el año.
       </p>
 
       <div class="tabla-evaluacion">
+
+        <!-- RETROALIMENTACIÓN CÁLIDA -->
         <div class="fila">
           <div class="etiqueta">Retroalimentación cálida</div>
           <div class="contenido">
             <ul>
               <li>
-                Consolidación de una <strong>metodología interdisciplinar</strong> que articula dibujo,
-                danza, teatro y música, con énfasis en el proceso pedagógico tanto como en las muestras
-                finales. Esto ha permitido que los grupos reconozcan el arte como un <strong>lenguaje
-                integral</strong> más que como actividades aisladas.
+                Se mantuvo la <strong>continuidad docente</strong> en la mayoría de grupos durante el año,
+                logrando un alto porcentaje de sesiones con el mismo profesional. Esto aportó estabilidad
+                emocional y pedagógica para los NNA, fortaleciendo la confianza y el vínculo con el programa.
               </li>
               <li>
-                Fortalecimiento de los <strong>vínculos NNA–docentes–familias</strong>, evidenciado en
-                la permanencia en los talleres, la participación en muestras como <em>AlegreMente</em> y
-                las manifestaciones de gratitud y apropiación del programa por parte de las comunidades.
+                Hubo un <strong>cumplimiento destacado en la realización de las sesiones</strong>:
+                muy pocas clases fueron canceladas por incumplimiento. Las variaciones que se presentaron
+                estuvieron asociadas a factores de fuerza mayor y quedaron debidamente soportadas.
               </li>
               <li>
-                Uso extendido y cada vez más natural de <strong>herramientas digitales</strong> (Manager,
-                tableros, portafolio de evidencias) que han facilitado el seguimiento de grupos, el
-                registro de información y la <strong>transparencia en los reportes</strong>.
+                El <strong>protocolo de asignación de docentes de apoyo</strong> se consolidó como una
+                herramienta clave para garantizar continuidad en casos de enfermedad o incapacidad, reforzando
+                la importancia de contar con relevos claros y oportunos.
+              </li>
+              <li>
+                Se evidenció una <strong>buena comunicación en novedades</strong>. Las situaciones imprevistas
+                y los cambios logísticos fueron notificados oportunamente a las líderes de sede, facilitando
+                la coordinación interna y evitando vacíos de información.
+              </li>
+              <li>
+                Las <strong>tareas académicas programadas</strong> permitieron que los docentes no se
+                desconectaran de su labor en días atípicos, abriendo espacios para la realización de informes,
+                planeaciones y apoyos específicos al centro, sin perder el hilo del proceso pedagógico.
+              </li>
+              <li>
+                Se observaron <strong>buenos resultados en el desarrollo de habilidades artísticas y
+                socioemocionales</strong>, evidenciados en los diagnósticos, proyectos, muestras de proceso
+                y devoluciones de las familias.
+              </li>
+              <li>
+                Se consolidó una <strong>metodología interdisciplinar</strong> que articula artes plásticas,
+                danza, teatro y música, entendiendo el arte como un lenguaje integral más que como actividades aisladas.
+              </li>
+              <li>
+                Se fortalecieron los <strong>vínculos NNA–docentes–familias</strong>, con una participación
+                activa en muestras, ensayos y actividades internas, y con manifestaciones reiteradas de
+                gratitud hacia el programa.
+              </li>
+              <li>
+                El uso de <strong>herramientas digitales</strong> (Manager, tableros, formularios y portafolio
+                de evidencias) se volvió cada vez más natural, lo que facilitó la gestión y la trazabilidad del proceso.
               </li>
             </ul>
           </div>
         </div>
 
+        <!-- RETROALIMENTACIÓN FRÍA -->
         <div class="fila">
           <div class="etiqueta">Retroalimentación fría</div>
           <div class="contenido">
             <ul>
               <li>
-                Variabilidad de la <strong>asistencia</strong> en algunos meses (particularmente
-                septiembre y octubre), asociada a factores de contexto escolar y familiar, que impacta
-                la continuidad de ciertos procesos y la consolidación de obras colectivas.
+                El proceso de <strong>selección docente</strong> requiere fortalecerse. Se identificó la necesidad
+                de implementar un periodo de prueba en campo que incluya visitas a diferentes centros antes de
+                asignar una sede definitiva.
               </li>
               <li>
-                Presencia de <strong>situaciones de convivencia puntuales</strong> que requieren
-                profundizar en protocolos preventivos, acuerdos de aula y acompañamiento diferenciado
-                para casos sensibles, articulando la ruta de atención de la Fundación.
+                Por la distancia logística con otros centros, se evidenció que <strong>Padre Misericordioso</strong>
+                requiere la asignación de un <strong>docente exclusivo</strong> para evitar tiempos de desplazamiento
+                excesivos y garantizar estabilidad operativa.
               </li>
               <li>
-                Limitaciones de <strong>infraestructura y materiales</strong> en determinadas sedes
-                (espacios reducidos, ruido externo, disponibilidad de equipos), que obligan a ajustes
-                continuos por parte del equipo docente para garantizar la experiencia artística.
+                Algunos NNA no muestran interés sostenido en ciertas áreas artísticas, lo que dificulta el desarrollo
+                de los procesos en algunos grupos y demanda nuevas estrategias de motivación y exploración inicial.
+              </li>
+              <li>
+                Se identificó que, en algunos casos, los docentes requieren una participación más activa en
+                <strong>reuniones con psicología y líderes</strong> para conocer en profundidad situaciones
+                particulares de los NNA y ajustar las estrategias pedagógicas.
+              </li>
+              <li>
+                La variabilidad de la <strong>asistencia</strong> en meses críticos afecta la consolidación de
+                proyectos colectivos y el ritmo de avance de los grupos.
+              </li>
+              <li>
+                Persisten <strong>limitaciones de infraestructura</strong> en ciertas sedes (espacios reducidos,
+                ruido externo, disponibilidad de equipos), que obligan a reajustar metodologías y uso del tiempo.
+              </li>
+              <li>
+                A lo largo del año, tanto en observaciones directas como en comentarios recibidos por parte de los
+                docentes del programa, se identificaron algunas prácticas utilizadas por <strong>ciertos líderes y docentes
+                de la Fundación</strong> para el manejo de grupo, tales como gritos, alzadas de voz, uso de silbatos o
+                llamados sonoros fuertes para obtener silencio o atención. Estas prácticas <strong>no corresponden al
+                enfoque pedagógico de Musicala</strong>, que promueve ambientes regulados, respetuosos y basados en
+                estrategias de autorregulación y manejo emocional.
+              </li>
+              <li>
+                También se reportó el uso de planas u otras tareas repetitivas como castigo, igualmente por parte de
+                miembros de la Fundación. Esta práctica no se alinea con el componente formativo del programa, en el cual
+                las consecuencias pedagógicas deben orientarse a la reflexión, la reparación del daño y el aprendizaje,
+                más que a sanciones mecánicas.
               </li>
             </ul>
           </div>
         </div>
 
+        <!-- MEJORAS / RECOMENDACIONES 2026 -->
         <div class="fila">
           <div class="etiqueta">Recomendaciones 2026</div>
           <div class="contenido">
             <ul>
               <li>
-                Implementar un <strong>plan de estabilización de asistencia</strong> que combine
-                recordatorios sistemáticos, acuerdos con sedes, campañas motivacionales y un
-                <strong>calendario unificado de muestras</strong> que permita a las familias proyectar su participación.
+                Implementar un <strong>periodo de prueba docente en campo</strong> que incluya rotación por varias
+                sedes antes de la asignación definitiva, para garantizar mejor ajuste entre perfil docente y contexto.
               </li>
               <li>
-                Diseñar una <strong>matriz de aula</strong> con estrategias específicas de convivencia
-                por grupo, incluyendo herramientas de regulación emocional, acuerdos visuales y un
-                “<strong>kit de clase</strong>” para las sedes que presentan mayor complejidad.
+                Asignar de forma fija un <strong>docente para Padre Misericordioso</strong>, de modo que la distancia
+                no afecte la puntualidad ni la continuidad de las sesiones.
               </li>
               <li>
-                Profundizar en la <strong>sistematización</strong> mediante un checklist mensual de
-                evidencias (fotos, registros, videos), articulado a un botón tipo
-                “<strong>Auditar</strong>” que facilite la consulta ordenada de Drive público y hojas
-                de control.
+                Construir un <strong>cronograma anual de muestras</strong> desde el inicio del año, acordado con las
+                líderes de cada centro y articulado con reuniones de padres, actividades de pastoral y fechas
+                institucionales, para facilitar la planeación familiar y logística.
+              </li>
+              <li>
+                Crear dos tipos de espacios/agrupaciones:
+                <br>• Un espacio de <strong>actividades más lúdicas</strong> para NNA con menor interés inicial, que
+                permita despertar el gusto por el arte.<br>
+                • Un grupo “<strong>Elite</strong>” conformado por quienes deseen profundizar voluntariamente, pensado
+                para muestras y presentaciones más avanzadas sin necesidad de ensayos extras extensivos.
+              </li>
+              <li>
+                Garantizar un <strong>conocimiento previo de los grupos</strong> por parte de los docentes (caracterización
+                básica, particularidades) antes de iniciar el año, para contar con una planeación más ajustada a la realidad.
+              </li>
+              <li>
+                Diseñar e implementar <strong>bloques de aprendizaje</strong> que permitan trabajar temas específicos de
+                manera articulada en todos los centros, manteniendo la identidad del programa y favoreciendo comparabilidad.
+              </li>
+              <li>
+                Promover <strong>actividades interdisciplinares</strong> que integren áreas como lenguaje, matemáticas,
+                educación física y psicología, potenciando el alcance del arte en la formación integral de los NNA.
+              </li>
+              <li>
+                Involucrar de forma sistemática a los docentes en <strong>reuniones con psicología y líderes</strong> cuando
+                existan casos específicos, para fortalecer la lectura conjunta de las situaciones y las rutas de acompañamiento.
+              </li>
+              <li>
+                Establecer un <strong>cronograma unificado</strong> de actividades, muestras y eventos que sea construido
+                conjuntamente entre las líderes de centro, Musicala y los docentes. Esto permitirá anticipación,
+                claridad y evitar actividades comunicadas de manera aislada o sorpresiva.
+              </li>
+
+              <li>
+                Fortalecer la formación de <strong>coordinadores y líderes</strong> en criterios pedagógicos y artísticos,
+                de modo que las retroalimentaciones emitidas a los docentes puedan fundamentarse en el reconocimiento
+                de habilidades, procesos y metodologías, y no únicamente en aspectos superficiales del comportamiento
+                o el producto visible.
+              </li>
+
+              <li>
+                Unificar los <strong>canales de comunicación oficiales</strong> entre Fundación – Musicala – docentes para
+                garantizar coherencia institucional, trazabilidad de acuerdos y evitar instrucciones contradictorias
+                o decisiones tomadas sin alineación entre las partes.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- CIERRE -->
+        <div class="fila">
+          <div class="etiqueta">Comentarios finales</div>
+          <div class="contenido">
+            El año 2025 cierra con un proceso sólido en lo artístico, operativo y humano. La continuidad docente,
+            el cumplimiento de las sesiones y la comunicación efectiva con las sedes han fortalecido la calidad del programa
+            y el vínculo de los NNA con las Casas Kiwa.
+            <br><br>
+            Para 2026, el reto principal será seguir consolidando la <strong>motivación, permanencia y participación activa</strong>
+            de los grupos, mientras se implementan las mejoras estructurales aquí descritas, manteniendo el
+            <strong>sello humano y artístico</strong> que caracteriza la alianza entre la Fundación San Antonio y Musicala SAS.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SÍNTESIS DE ACTAS DE CIERRE -->
+    <div id="sintesis" class="card">
+      <h3>2B) Síntesis de Retroalimentación Docente – Actas de Cierre 2025</h3>
+      <p>
+        A partir de las reuniones individuales de cierre realizadas con los docentes de arte
+        (danza, teatro y artes plásticas), se identificaron aspectos comunes en metodologías,
+        retos operativos, dinámicas emocionales, comunicación y logística. Esta síntesis integra
+        los puntos más relevantes mencionados en las actas de cierre 2025.
+      </p>
+
+      <div class="tabla-evaluacion">
+        <div class="fila">
+          <div class="etiqueta">Fortalezas comunes</div>
+          <div class="contenido">
+            <ul>
+              <li>Alta capacidad de adaptación a contextos difíciles y grupos retadores.</li>
+              <li>Uso de metodologías basadas en juego, movimiento, exploración y creatividad.</li>
+              <li>Énfasis en vínculo emocional, escucha y acompañamiento a los estudiantes.</li>
+              <li>Compromiso constante con la continuidad pedagógica y con el proyecto Kiwa.</li>
+              <li>Disposición a trabajar interdisciplinariamente cuando las condiciones lo permitieron.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="fila">
+          <div class="etiqueta">Retos recurrentes</div>
+          <div class="contenido">
+            <ul>
+              <li>Comunicación tardía o incompleta entre Centros → Musicala → docentes.</li>
+              <li>Interrupciones constantes por actividades inesperadas o cambios de agenda.</li>
+              <li>Manejo de grupos numerosos o mezclados (especialmente ciclos 1 y 2 juntos).</li>
+              <li>Limitaciones de espacio, ruido o infraestructura en algunas sedes.</li>
+              <li>Carga administrativa alta en momentos específicos del año (AlegreMente, informes finales).</li>
+              <li>
+                Presencia de <strong>canales de comunicación paralelos</strong> entre líderes de centro y docentes,
+                sin la participación oportuna de la coordinación de Musicala. Esta práctica generó inconsistencias,
+                cambios repentinos en programación y dificultades en la articulación institucional.
+              </li>
+
+              <li>
+                En algunos casos se emitieron comentarios, retroalimentaciones o percepciones basadas en
+                <strong>rumores o comentarios informales</strong> (“se escuchó que…”) sin procesos claros de verificación o
+                contraste de información. Esto provocó tensiones y conclusiones que no siempre partieron de evidencias
+                formales o registros objetivos.
               </li>
             </ul>
           </div>
         </div>
 
         <div class="fila">
-          <div class="etiqueta">Comentarios finales</div>
+          <div class="etiqueta">Sugerencias docentes</div>
           <div class="contenido">
-            El año 2025 cierra con un proceso <strong>sólido en calidad pedagógica y ejecución
-            programática</strong>, en el que se evidencian avances significativos en la apropiación del
-            arte como herramienta de protección, cuidado y construcción de proyecto de vida para NNA.
-            <br><br>
-            El principal reto para 2026 consiste en <strong>incrementar la cobertura efectiva y
-            estabilizar la asistencia</strong>, especialmente en los meses críticos, manteniendo el
-            <strong>sello humano, artístico y relacional</strong> que ha caracterizado la alianza
-            entre la Fundación San Antonio y Musicala SAS.
+            <ul>
+              <li>Realizar una inducción más robusta para docentes nuevos a mitad de año.</li>
+              <li>Contar con un coordinador pedagógico disponible en tiempo real.</li>
+              <li>Definir mejor la articulación entre artes para evitar improvisación en ensambles.</li>
+              <li>Diseñar un hito artístico propio que sea independiente de actividades externas.</li>
+              <li>Implementar un grupo “Elite” de muestra voluntaria para estudiantes interesados.</li>
+              <li>Aumentar algunos materiales especializados para grupos mayores de artes plásticas.</li>
+              <li>Programar ensayos logísticos además de ensayos artísticos para los eventos.</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -431,6 +541,61 @@
             </td>
             <td>Coordinación logística y equipo docente</td>
           </tr>
+          <tr>
+            <td>Comunicación tardía entre Centros y Musicala</td>
+            <td>
+              Actas de cierre donde docentes reportan cambios inesperados, actividades no notificadas
+              y cronogramas enviados el mismo día, lo cual afectó planeaciones y logística.
+            </td>
+            <td>
+              • Establecer un <strong>protocolo de comunicación tripartita</strong> (Centro → Musicala → docentes) con tiempos mínimos definidos.<br>
+              • Unificar calendarización mensual en un tablero compartido.<br>
+              • Usar un canal único por centro para avisos urgentes.
+            </td>
+            <td>Coordinación general</td>
+          </tr>
+          <tr>
+            <td>Grupos numerosos o mezclados</td>
+            <td>
+              Referencias de docentes (especialmente artes plásticas) a grupos de más de 30 estudiantes
+              y mezcla de ciclos que dificultan el acompañamiento individual.
+            </td>
+            <td>
+              • Solicitar apoyo de <strong>auxiliar pedagógico rotativo</strong> en grupos grandes.<br>
+              • Ajustar la distribución de grupos y horarios para evitar sobrecarga.<br>
+              • Diseñar planeaciones diferenciadas según número de estudiantes.
+            </td>
+            <td>Coordinación pedagógica</td>
+          </tr>
+          <tr>
+            <td>Desorden logístico en eventos mayores</td>
+            <td>
+              Comentarios de varios docentes sobre el “corre-corre” de AlegreMente y algunas clausuras,
+              con información dispersa y poca anticipación en ciertos centros.
+            </td>
+            <td>
+              • Programar <strong>ensayos logísticos</strong> además de los artísticos.<br>
+              • Elaborar documentos guía por centro con roles y tiempos claros.<br>
+              • Acordar cronogramas de muestras desde el inicio del año.
+            </td>
+            <td>Producción y coordinación de centros</td>
+          </tr>
+          <tr>
+            <td>Comunicación paralela, rumores y desalineación pedagógica</td>
+            <td>
+              Se identificaron situaciones en las que líderes o docentes de la Fundación establecieron acuerdos
+              o retroalimentaciones directas sin involucrar a Musicala, así como percepciones basadas en comentarios
+              informales sin verificación clara. Esto generó desajustes en la programación, tensiones en los equipos
+              y retroalimentaciones incompletas o basadas en información no comprobada.
+            </td>
+            <td>
+              • Implementar un <strong>protocolo de comunicación institucional único</strong>.<br>
+              • Reforzar los <strong>mecanismos de verificación</strong> y registro antes de emitir retroalimentaciones.<br>
+              • Realizar espacios de formación conjunta para fortalecer criterios pedagógicos y artísticos unificados.<br>
+              • Consolidar la socialización previa de cada decisión o ajuste para asegurar coherencia institucional.
+            </td>
+            <td>Fundación San Antonio – Musicala SAS – Líderes de centro</td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -450,13 +615,7 @@
           <img src="galeria.jpg" alt="Galería Casas Kiwa">
           <span>Abrir carpeta pública de evidencias</span>
         </a>
-        <!-- Aquí se pueden añadir miniaturas públicas específicas por sedes o eventos -->
       </div>
-      <p class="nota-evidencia">
-        ⚠️ En caso de que el sistema solicite inicio de sesión, es importante verificar que la carpeta
-        esté configurada como <strong>“Cualquiera con el enlace – Lector”</strong>, respetando siempre
-        las políticas de uso de imagen y protección de datos personales de NNA.
-      </p>
     </div>
 
     <!-- METODOLOGÍA -->
@@ -464,9 +623,8 @@
       <h3>5) Notas metodológicas y fuentes de información</h3>
       <p>
         Este consolidado anual se elabora a partir de los informes mensuales correspondientes al periodo
-        <strong>marzo – octubre 2025</strong>, así como de los tableros en <strong>Looker Studio</strong>
-        y aplicativos internos de Musicala SAS. El mes de <strong>noviembre</strong> se integra una vez
-        finalizado el proceso de validación y cierre de datos.
+        <strong>marzo – noviembre 2025</strong>, así como de los tableros en <strong>Looker Studio</strong>
+        y aplicativos internos de Musicala SAS. Incluye el corte de noviembre validado al cierre del año.
       </p>
       <p>
         A continuación, se referencian los informes de gestión mensuales publicados en entorno web,
@@ -480,7 +638,7 @@
         <a class="btn-evidencias" href="https://musicala.github.io/informedegestionjulio/" target="_blank">Julio</a>
         <a class="btn-evidencias" href="https://musicala.github.io/informedegestionseptiembre/" target="_blank">Septiembre</a>
         <a class="btn-evidencias" href="https://musicala.github.io/informedegestionoctubre/" target="_blank">Octubre</a>
-        <!-- Noviembre se agrega cuando esté publicado -->
+        <a class="btn-evidencias" href="https://musicala.github.io/informedegestionnoviembre/" target="_blank">Noviembre</a>
       </div>
       <p class="nota-indicador" style="margin-top:1rem;">
         La coherencia entre estos informes mensuales, el tablero de control y el presente consolidado
@@ -490,30 +648,6 @@
     </div>
   </section>
   <!-- ====================== / INFORME ANUAL ====================== -->
-
-
-  <!-- ====================== INFORME MENSUAL (vista resumen) ====================== -->
-  <section id="informe">
-    <div class="card">
-      <h3>Informe técnico mensual (formato F-GS-37)</h3>
-      <p>
-        Esta vista está pensada como acceso rápido al <strong>informe mensual vigente</strong> en
-        formato F-GS-37, manteniendo la estructura y contenidos que se presentan habitualmente a la
-        Fundación San Antonio. Desde aquí se puede revisar el detalle del mes, complementar el análisis
-        anual y descargar el documento para archivo.
-      </p>
-      <p>
-        Para el presente corte, el informe correspondiente es el de <strong>noviembre 2025</strong>,
-        accesible en el siguiente enlace:
-      </p>
-      <div class="btn-group">
-        <a class="btn-evidencias" href="https://musicala.github.io/informedegestionnoviembre/" target="_blank">Abrir informe de noviembre</a>
-        <a class="btn-evidencias" href="#" onclick="window.print()">🖨️ Descargar / Imprimir PDF</a>
-      </div>
-    </div>
-  </section>
-  <!-- ====================== / INFORME MENSUAL ====================== -->
-
 
   <!-- ====================== TABLERO (iframe o enlace) ====================== -->
   <section id="tablero">
@@ -528,10 +662,9 @@
       <div class="btn-group" style="margin:.6rem 0 1rem">
         <a class="btn-evidencias" target="_blank" href="https://lookerstudio.google.com/reporting/46386242-adff-436e-81b3-b30b638f6d63/page/p_ms2ajwssqd">Abrir tablero</a>
       </div>
-      <div style="position:relative;padding-top:56.25%;background:#f6f7fb;border:1px solid #eee;border-radius:12px;overflow:hidden">
+      <div class="iframe-container">
         <iframe
           src="https://lookerstudio.google.com/embed/reporting/46386242-adff-436e-81b3-b30b638f6d63/page/p_ms2ajwssqd"
-          style="position:absolute;inset:0;border:0;width:100%;height:100%"
           allowfullscreen
         ></iframe>
       </div>
@@ -539,33 +672,30 @@
   </section>
   <!-- ====================== / TABLERO ====================== -->
 
-
   <script>
     // Mostrar una sola vista a la vez
     function mostrarSeccion(seccion) {
       const anual   = document.getElementById('anual-2025');
-      const informe = document.getElementById('informe');
       const tablero = document.getElementById('tablero');
-      [anual, informe, tablero].forEach(el=>{
-        if(!el) return;
+
+      [anual, tablero].forEach(el => {
+        if (!el) return;
         el.classList.remove('mostrar');
-        el.style.display='none';
+        el.style.display = 'none';
       });
-      if(seccion==='anual' && anual){
-        anual.style.display='block';
-        requestAnimationFrame(()=>anual.classList.add('mostrar'));
+
+      if (seccion === 'anual' && anual) {
+        anual.style.display = 'block';
+        requestAnimationFrame(() => anual.classList.add('mostrar'));
       }
-      if(seccion==='informe' && informe){
-        informe.style.display='block';
-        requestAnimationFrame(()=>informe.classList.add('mostrar'));
-      }
-      if(seccion==='tablero' && tablero){
-        tablero.style.display='block';
-        requestAnimationFrame(()=>tablero.classList.add('mostrar'));
+      if (seccion === 'tablero' && tablero) {
+        tablero.style.display = 'block';
+        requestAnimationFrame(() => tablero.classList.add('mostrar'));
       }
     }
+
     // Por defecto, abre el Anual
-    document.addEventListener('DOMContentLoaded', ()=> mostrarSeccion('anual'));
+    document.addEventListener('DOMContentLoaded', () => mostrarSeccion('anual'));
   </script>
 </body>
 </html>
