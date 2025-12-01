@@ -15,71 +15,76 @@ body {
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: radial-gradient(circle at top left, #e5edff, #f5f7ff 40%, #ffffff 100%);
-  color: #111827;
-  line-height: 1.5;
-}
-
-/* Contenedor principal de las secciones */
-.informe,
-#tablero {
-  max-width: 1100px;
-  margin: 0 auto 2.5rem;
-  padding: 0 1rem 2rem;
-}
-
-/* Tarjetas generales */
-.card {
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 1.4rem 1.6rem;
-  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
-  margin: 1rem 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI",
+    Roboto, sans-serif;
+  background: radial-gradient(circle at top left, #eef2ff 0, #f9fafb 40%, #f9fafb 100%);
+  color: #0f172a;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* ==========================
-   BOTONERA SUPERIOR
+   LAYOUT GENERAL
 ========================== */
 
 .botonera {
+  max-width: 1200px;
+  margin: 1.5rem auto 0.5rem;
+  padding: 0 1rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6rem;
+  gap: 0.75rem;
   justify-content: center;
-  margin: 1.2rem auto 0.4rem;
-  padding: 0.2rem 0.8rem;
 }
 
-.botonera button {
-  border: none;
+.botonera button,
+.botonera .ghost {
   border-radius: 999px;
-  padding: 0.6rem 1.1rem;
-  font-weight: 600;
+  border: none;
+  padding: 0.65rem 1.4rem;
   font-size: 0.95rem;
+  font-weight: 500;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  background: #0c57c3;
-  color: #ffffff;
-  box-shadow: 0 6px 16px rgba(12, 87, 195, 0.25);
+  gap: 0.4rem;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15);
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #f9fafb;
+  letter-spacing: 0.02em;
 }
 
-.botonera button.ghost {
-  background: #ffffff;
-  color: #0c57c3;
-  border: 1px solid #0c57c3;
+.botonera .ghost {
+  background: #e5e7eb;
+  color: #111827;
   box-shadow: none;
 }
 
 .botonera button:hover {
   transform: translateY(-1px);
-  box-shadow: 0 8px 18px rgba(12, 87, 195, 0.28);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.18);
 }
 
-.botonera button.ghost:hover {
-  background: #f0f4ff;
+.botonera .ghost:hover {
+  background: #d1d5db;
+}
+
+/* ==========================
+   TARJETAS / CONTENEDORES
+========================== */
+
+.informe {
+  max-width: 1200px;
+  margin: 1.5rem auto 3rem;
+  padding: 0 1rem 3rem;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 1.75rem 2rem;
+  margin-bottom: 1.75rem;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
+  border: 1px solid rgba(148, 163, 184, 0.35);
 }
 
 /* ==========================
@@ -87,98 +92,126 @@ body {
 ========================== */
 
 .header-informe {
-  display: block;
-  text-align: center;
-  margin: 1rem auto 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 .header-informe img {
-  width: 100%;
-  max-width: 900px;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-.titulo-institucional {
-  text-align: center;
-  margin: 0.4rem auto 0;
+  height: 82px;
+  width: auto;
 }
 
 .titulo-institucional h3 {
-  margin: 0.2rem 0 0;
-  font-size: 1rem;
-  letter-spacing: 0.02em;
+  font-size: 0.85rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
+  margin: 0 0 0.25rem;
+  color: #111827;
 }
 
 .titulo-institucional p {
-  margin: 0.15rem 0 0;
+  margin: 0;
   font-size: 0.9rem;
   color: #4b5563;
 }
 
+/* ==========================
+   TÍTULO CENTRAL
+========================== */
+
 .titulo-informe {
   text-align: center;
-  margin: 0.6rem auto 1.2rem;
-  font-size: 1.45rem;
-  font-weight: 700;
-  color: #111827;
+  margin: 0.75rem 0 1.5rem;
+  padding: 0.75rem 0;
+  font-size: 1.1rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #0f172a;
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 /* ==========================
    HERO / INTRO
 ========================== */
 
-.hero-anual .lead {
-  margin-bottom: 0.7rem;
-  font-size: 0.98rem;
-  color: #1f2933;
+.hero-anual {
+  position: relative;
+  overflow: hidden;
 }
+
+.hero-anual::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(129, 140, 248, 0.16), transparent 55%),
+    radial-gradient(circle at 100% 100%, rgba(236, 72, 153, 0.16), transparent 55%);
+  opacity: 0.85;
+  z-index: -1;
+}
+
+.lead {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: #111827;
+  margin-bottom: 1rem;
+}
+
+/* ==========================
+   CHIPS / IMPACTO
+========================== */
 
 .impacto-tripleta {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin: 0.8rem 0 1rem;
+  gap: 0.55rem;
+  margin: 0.75rem 0 1.25rem;
 }
 
 .chip {
   display: inline-flex;
   align-items: center;
-  padding: 0.25rem 0.7rem;
+  padding: 0.4rem 0.75rem;
   border-radius: 999px;
   font-size: 0.8rem;
-  background: #e5f0ff;
-  color: #0c57c3;
-  font-weight: 600;
+  background: rgba(15, 23, 42, 0.03);
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  color: #111827;
 }
 
 .badge-amarillo {
-  background: #fdf5cf;
+  background: #fef9c3;
+  border-color: #facc15;
   color: #92400e;
 }
 
-/* Tabla de contenido interna */
+/* ==========================
+   TOC – NAVEGACIÓN INTERNA
+========================== */
+
 .toc {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-top: 0.8rem;
+  margin-top: 0.75rem;
 }
 
 .toc a {
-  padding: 0.35rem 0.7rem;
-  border-radius: 999px;
   font-size: 0.8rem;
   text-decoration: none;
-  background: #f3f4ff;
-  color: #0c57c3;
-  font-weight: 500;
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.04);
+  color: #111827;
+  border: 1px solid rgba(148, 163, 184, 0.55);
 }
 
 .toc a:hover {
-  background: #e0e7ff;
+  background: #111827;
+  color: #f9fafb;
 }
 
 /* ==========================
@@ -187,154 +220,183 @@ body {
 
 .kpi-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.9rem;
-  margin-top: 0.8rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 1.75rem;
 }
 
 .kpi-card {
-  background: #ffffff;
-  border-radius: 14px;
-  padding: 0.9rem 1rem;
-  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.05);
-  border: 1px solid #e5e7eb;
+  background: #0f172a;
+  color: #e5e7eb;
+  border-radius: 20px;
+  padding: 1.15rem 1.2rem;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.kpi-card::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(129, 140, 248, 0.28), transparent 55%),
+    radial-gradient(circle at 100% 100%, rgba(236, 72, 153, 0.35), transparent 55%);
+  opacity: 0.7;
+  z-index: 0;
+}
+
+.kpi-card > * {
+  position: relative;
+  z-index: 1;
 }
 
 .kpi-label {
-  font-size: 0.8rem;
-  color: #6b7280;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 0.25rem;
+  color: #cbd5f5;
+  margin-bottom: 0.4rem;
 }
 
 .kpi-value {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #111827;
-}
-
-.kpi-sub {
-  font-size: 0.8rem;
-  color: #4b5563;
-  margin: 0.25rem 0 0.4rem;
-}
-
-.kpi-card .bar {
-  width: 100%;
-  height: 6px;
-  border-radius: 999px;
-  background: #e5e7eb;
-  overflow: hidden;
+  font-size: 1.7rem;
+  font-weight: 650;
+  color: #f9fafb;
   margin-bottom: 0.3rem;
 }
 
-.kpi-card .bar span {
+.kpi-sub {
+  font-size: 0.85rem;
+  color: #e5e7eb;
+  opacity: 0.9;
+}
+
+.bar {
+  width: 100%;
+  height: 0.4rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.65);
+  margin: 0.6rem 0 0.7rem;
+  overflow: hidden;
+}
+
+.bar span {
   display: block;
   height: 100%;
   border-radius: 999px;
-  background: linear-gradient(90deg, #0c57c3, #3b82f6);
+  background: linear-gradient(90deg, #4ade80, #22c55e, #a3e635);
+}
+
+.nota-indicador {
+  font-size: 0.8rem;
+  color: #e5e7eb;
+  opacity: 0.9;
 }
 
 /* ==========================
-   TABLAS GENERALES
+   TABLAS DE INDICADORES
 ========================== */
 
 .tabla-seguimiento {
   width: 100%;
   border-collapse: collapse;
-  margin: 0.8rem auto;
-  background: #ffffff;
-  border-radius: 14px;
-  overflow: hidden;
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.tabla-seguimiento th,
+.tabla-seguimiento td {
+  border: 1px solid #e5e7eb;
+  padding: 0.75rem 0.75rem;
+  vertical-align: top;
 }
 
 .tabla-seguimiento thead th {
-  background: #f3f4ff;
-  padding: 0.8rem;
-  text-align: left;
-  font-size: 0.85rem;
-  font-weight: 700;
-  border-bottom: 1px solid #e5e7eb;
+  background: #f3f4f6;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
 }
 
-.tabla-seguimiento tbody td {
-  padding: 0.75rem 0.8rem;
-  font-size: 0.85rem;
-  vertical-align: top;
-  border-bottom: 1px solid #f3f4f6;
+.tabla-seguimiento tbody tr:nth-child(even) td {
+  background: #f9fafb;
 }
 
-.tabla-seguimiento tbody tr:last-child td {
-  border-bottom: none;
-}
+/* Botones de evidencias dentro de tablas */
 
-/* ==========================
-   EVIDENCIAS / BOTONES
-========================== */
+.evidencias-cell {
+  width: 220px;
+}
 
 .btn-group {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem;
+  gap: 0.35rem;
 }
 
 .btn-evidencias {
   display: inline-flex;
   align-items: center;
-  padding: 0.4rem 0.7rem;
+  justify-content: center;
+  padding: 0.28rem 0.55rem;
   border-radius: 999px;
-  border: 1px solid #e5e7eb;
-  font-size: 0.8rem;
-  font-weight: 600;
+  font-size: 0.75rem;
+  background: #111827;
+  color: #f9fafb;
+  border: 1px solid #020617;
   text-decoration: none;
-  color: #0c57c3;
-  background: #ffffff;
+  white-space: nowrap;
 }
 
 .btn-evidencias:hover {
-  background: #f3f4ff;
+  background: #0f172a;
 }
 
 /* ==========================
-   TABLA EVALUACIÓN (CUALITATIVA / ACTAS)
+   TABLA EVALUACIÓN CUALITATIVA
 ========================== */
 
 .tabla-evaluacion {
   display: flex;
   flex-direction: column;
-  gap: 0.7rem;
-  margin-top: 0.7rem;
+  gap: 1.1rem;
 }
 
 .tabla-evaluacion .fila {
   display: grid;
-  grid-template-columns: 180px minmax(0, 1fr);
-  gap: 0.7rem;
-  padding: 0.7rem 0.7rem;
-  border-radius: 12px;
-  background: #f9fafb;
-  border: 1px solid #e5e7eb;
+  grid-template-columns: minmax(0, 210px) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: stretch;
 }
 
 .tabla-evaluacion .etiqueta {
-  font-weight: 700;
-  font-size: 0.85rem;
-  color: #111827;
+  background: #0f172a;
+  color: #e5e7eb;
+  padding: 0.9rem 0.9rem;
+  border-radius: 16px;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }
 
 .tabla-evaluacion .contenido {
-  font-size: 0.85rem;
-  color: #374151;
+  background: #f9fafb;
+  padding: 0.9rem 1rem;
+  border-radius: 18px;
+  border: 1px solid #e5e7eb;
+  font-size: 0.9rem;
+  line-height: 1.7;
 }
 
-.tabla-evaluacion ul {
-  margin: 0.1rem 0 0;
-  padding-left: 1.1rem;
+.tabla-evaluacion .contenido ul {
+  margin: 0.4rem 0 0;
+  padding-left: 1.15rem;
 }
 
-.tabla-evaluacion li + li {
-  margin-top: 0.2rem;
+.tabla-evaluacion .contenido li {
+  margin-bottom: 0.35rem;
 }
 
 /* ==========================
@@ -343,47 +405,59 @@ body {
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 0.8rem;
-  margin-top: 0.7rem;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 0.85rem;
 }
 
 .gallery-card {
+  background: #020617;
+  border-radius: 18px;
+  padding: 0.75rem 0.9rem;
   display: flex;
-  flex-direction: column;
-  border-radius: 14px;
-  overflow: hidden;
-  border: 1px solid #e5e7eb;
+  align-items: center;
+  gap: 0.85rem;
+  color: #f9fafb;
   text-decoration: none;
-  background: #ffffff;
+  box-shadow: 0 20px 35px rgba(15, 23, 42, 0.6);
 }
 
 .gallery-card img {
-  width: 100%;
-  height: 150px;
+  width: 120px;
+  height: 78px;
   object-fit: cover;
-  display: block;
+  border-radius: 14px;
 }
 
 .gallery-card span {
-  padding: 0.6rem 0.7rem;
-  font-size: 0.85rem;
-  color: #0c57c3;
-  font-weight: 600;
+  font-size: 0.9rem;
 }
 
 /* ==========================
-   IFRAME TABLERO
+   METODOLOGÍA
 ========================== */
+
+#metodologia .btn-group .btn-evidencias {
+  background: #111827;
+  border-color: #020617;
+}
+
+/* ==========================
+   TABLERO (IFRAME)
+========================== */
+
+#iframe {
+  width: 100%;
+}
 
 .iframe-container {
   position: relative;
-  padding-top: 56.25%;
-  border-radius: 16px;
-  border: 1px solid #e5e7eb;
+  padding-bottom: 56.25%;
+  height: 0;
+  border-radius: 18px;
   overflow: hidden;
-  background: #f3f4ff;
-  margin-top: 0.8rem;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.25);
+  border: 1px solid rgba(148, 163, 184, 0.4);
 }
 
 .iframe-container iframe {
@@ -391,39 +465,92 @@ body {
   inset: 0;
   width: 100%;
   height: 100%;
-  border: none;
+  border: 0;
+}
+
+/* ==========================
+   TABLERO SECTION WRAPPER
+========================== */
+
+#tablero {
+  max-width: 1200px;
+  margin: 1.5rem auto 3rem;
+  padding: 0 1rem 3rem;
+}
+
+/* ==========================
+   ESTADOS / ANIMACIONES
+========================== */
+
+#anual-2025,
+#tablero {
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  display: none;
+}
+
+#anual-2025.mostrar,
+#tablero.mostrar {
+  opacity: 1;
+  transform: translateY(0);
+  display: block;
 }
 
 /* ==========================
    RESPONSIVE
 ========================== */
 
-@media (max-width: 900px) {
+@media (max-width: 960px) {
   .kpi-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
   }
 
-  .tabla-evaluacion .fila {
-    grid-template-columns: 1fr;
+  .header-informe {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-informe img {
+    height: 70px;
+  }
+
+  .card {
+    padding: 1.25rem 1.35rem;
   }
 }
 
-@media (max-width: 640px) {
-  .kpi-grid {
+@media (max-width: 720px) {
+  .tabla-evaluacion .fila {
     grid-template-columns: 1fr;
   }
 
-  .botonera {
-    justify-content: flex-start;
+  .tabla-seguimiento {
+    font-size: 0.82rem;
   }
 
-  .titulo-informe {
-    font-size: 1.25rem;
+  .tabla-seguimiento th,
+  .tabla-seguimiento td {
+    padding: 0.6rem 0.5rem;
+  }
+
+  .evidencias-cell {
+    width: auto;
+  }
+
+  .gallery-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .gallery-card img {
+    width: 100%;
+    height: 160px;
   }
 }
 
 /* ==========================
-   IMPRESIÓN
+   PRINT STYLES
 ========================== */
 
 @media print {
@@ -435,15 +562,11 @@ body {
     display: none;
   }
 
+  .informe,
   #tablero {
-    display: none !important;
-  }
-
-  .informe {
-    max-width: 100%;
+    max-width: none;
     margin: 0;
-    padding: 0 1.2cm 1.5cm;
-    box-shadow: none;
+    padding: 0;
   }
 
   .card {
@@ -458,4 +581,217 @@ body {
   .gallery-card img {
     height: auto;
   }
+}
+
+/* ==========================
+   APROBACIÓN Y FIRMAS – BLOQUE NOVIEMBRE ADAPTADO
+========================== */
+
+.aprobacion-editable {
+  max-width: 1200px;
+  margin: 2rem auto 3rem;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  border: 1px solid #e5e7eb;
+}
+
+.aprobacion-editable h3 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #111827;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 0.75rem;
+}
+
+.tabla-aprobacion {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.tabla-aprobacion th,
+.tabla-aprobacion td {
+  border: 1px solid #e5e7eb;
+  padding: 0.8rem 1rem;
+  vertical-align: top;
+}
+
+.tabla-aprobacion th {
+  background-color: #f3f4f6;
+  text-align: center;
+  width: 22%;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.tabla-aprobacion label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.tabla-aprobacion input[type="radio"] {
+  width: 16px;
+  height: 16px;
+}
+
+.aprobacion-editable textarea {
+  width: 100%;
+  margin-top: 0.6rem;
+  padding: 0.7rem 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 0.95rem;
+  resize: vertical;
+  min-height: 90px;
+  font-family: inherit;
+  background-color: #f9fafb;
+}
+
+/* Bloque de firmas – dos columnas */
+
+.firmas-plantilla {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.firma-box {
+  background: #f9fafb;
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.firma-titulo {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #6b7280;
+}
+
+.firma-espacio {
+  height: 70px;
+  border-bottom: 1px solid #9ca3af;
+  margin: 0.5rem 0 0.75rem;
+}
+
+.firma-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.92rem;
+}
+
+.firma-footer .fila {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+.firma-footer .lbl {
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #6b7280;
+}
+
+.inline-input {
+  flex: 1 1 160px;
+  min-width: 0;
+  padding: 0.3rem 0.45rem;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 0.9rem;
+}
+
+.inline-input.fecha {
+  max-width: 160px;
+}
+
+/* Responsivo firmas */
+
+@media (max-width: 900px) {
+  .firmas-plantilla {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Ajustes de impresión */
+
+@media print {
+  .aprobacion-editable {
+    box-shadow: none;
+    border-radius: 0;
+    border: 1px solid #000;
+    margin: 1rem 0 0;
+    padding: 1rem 0.6rem;
+    page-break-inside: avoid;
+  }
+
+  .aprobacion-editable textarea,
+  .inline-input {
+    border: none;
+    background: transparent;
+  }
+
+  .tabla-aprobacion th,
+  .tabla-aprobacion td {
+    border-color: #000;
+  }
+
+  .firma-box {
+    background: transparent;
+    border-color: #000;
+    border-radius: 0;
+  }
+
+  .firma-espacio {
+    border-color: #000;
+  }
+}
+
+.header-full {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* centra horizontalmente */
+  gap: 1.5rem;
+  padding: 1rem 2rem;
+  background: white; /* o transparente según diseño */
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.header-full img {
+  height: 90px; /* ajusta al gusto */
+  width: auto;
+}
+
+.header-full .titulo-institucional h3 {
+  font-size: 1rem;
+  margin: 0;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #111827;
+}
+
+.header-full .titulo-institucional p {
+  margin: .2rem 0 0;
+  font-size: .95rem;
+  color: #4b5563;
+  text-align: left;
 }
