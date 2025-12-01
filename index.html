@@ -15,17 +15,18 @@
     <button class="ghost" onclick="window.print()">🖨️ Descargar / Imprimir PDF</button>
   </div>
 
+  <!-- ========================== ENCABEZADO HORIZONTAL ========================== -->
+  <div class="header-informe" style="justify-content:center;">
+    <!-- Encabezado institucional -->
+    <img src="Encabezado FSA.PNG" alt="Fundación San Antonio">
+    <div class="titulo-institucional">
+      <h3>Fundación San Antonio – Gestión Social</h3>
+      <p>Programa Casas Kiwa · Operador: <strong>Musicala SAS</strong></p>
+    </div>
+  </div>
+
   <!-- ========================== INFORME ANUAL CONSOLIDADO ========================== -->
   <section id="anual-2025" class="informe mostrar">
-    <div class="header-informe">
-      <!-- Encabezado institucional -->
-      <img src="Encabezado FSA.PNG" alt="Fundación San Antonio">
-      <div class="titulo-institucional">
-        <h3>Fundación San Antonio – Gestión Social</h3>
-        <p>Programa Casas Kiwa · Operador: <strong>Musicala SAS</strong></p>
-      </div>
-    </div>
-
     <h2 class="titulo-informe">Informe Anual Consolidado 2025 – Programa Casas Kiwa</h2>
 
     <!-- Hero / Intro -->
@@ -632,6 +633,77 @@
         durante 2025.
       </p>
     </div>
+
+    <!-- ========== BLOQUE AÑADIDO: APROBACIÓN + FIRMAS (MODO NOVIEMBRE) ========== -->
+    <hr style="margin: 2rem 0;">
+
+    <section class="aprobacion-editable">
+      <h3>Aprobación del informe anual 2025 (Subdirección de Gestión Social y RRII):</h3>
+      <form>
+        <table class="tabla-aprobacion">
+          <tr>
+            <th rowspan="3">APROBADO</th>
+            <td>
+              <label><input type="radio" name="aprobacion" value="Sí" onclick="toggleComentario(false)"> Sí</label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>
+                <input type="radio" name="aprobacion" value="Sí con recomendaciones" onclick="toggleComentario(true)">
+                Sí con recomendaciones
+              </label>
+              <textarea id="comentario-recomendaciones" placeholder="Especificar recomendaciones..." style="display: none;"></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label><input type="radio" name="aprobacion" value="No" onclick="toggleComentario(false)"> No</label>
+            </td>
+          </tr>
+        </table>
+      </form>
+
+      <section class="firmas-plantilla">
+        <!-- IZQUIERDA: coordinador proyecto (fijo) -->
+        <div class="firma-box">
+          <div class="firma-titulo">Firma</div>
+          <div class="firma-espacio"></div>
+          <div class="firma-footer">
+            <div class="fila">
+              <span class="lbl">NOMBRE DEL COORDINADOR O LÍDER DEL PROYECTO:</span>
+              Jimmy Alexander Caballero Moreno
+            </div>
+            <div class="fila">
+              <span class="lbl">PROYECTO:</span>
+              Casas Kiwa
+            </div>
+            <div class="fila">
+              <span class="lbl">FECHA:</span>
+              25/11/2025
+            </div>
+          </div>
+        </div>
+
+        <!-- DERECHA: coordinador general (editable) -->
+        <div class="firma-box">
+          <div class="firma-titulo">Firma</div>
+          <div class="firma-espacio"></div>
+          <div class="firma-footer">
+            <div class="fila fila-edit">
+              <span class="lbl">NOMBRE DEL COORDINADOR GENERAL DE PROGRAMAS Y PROYECTOS</span>
+              <input class="inline-input" type="text" placeholder="Nombres y apellidos">
+            </div>
+            <div class="fila fila-edit">
+              <span class="lbl">FECHA:</span>
+              <input class="inline-input fecha" type="text" placeholder="dd/mm/aaaa">
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+    <!-- ========== / BLOQUE AÑADIDO ========== -->
+
   </section>
   <!-- ====================== / INFORME ANUAL ====================== -->
 
@@ -683,6 +755,14 @@
     // Por defecto, abre el Anual
     document.addEventListener('DOMContentLoaded', () => mostrarSeccion('anual'));
   </script>
+
+  <!-- Script añadido para mostrar/ocultar el comentario de recomendaciones -->
+  <script>
+    function toggleComentario(mostrar) {
+      const campo = document.getElementById('comentario-recomendaciones');
+      if (!campo) return;
+      campo.style.display = mostrar ? 'block' : 'none';
+    }
+  </script>
 </body>
 </html>
-
